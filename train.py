@@ -93,9 +93,9 @@ optimizer = torch.optim.Adam(model.parameters(), lr = lr)
 
 
 # Loading Data
-df = pd.read_csv('../qacc_data.csv')
-questions = df['Question'].tolist()
-acceptability = df['Q_Acc'].tolist()
+df = pd.read_csv('../data.csv')
+questions = df['in_text'].tolist()
+acceptability = df['out_label'].tolist()
 
 train_data = questions[: int(len(questions) * train_size)]
 train_labels = acceptability[: int(len(acceptability) * train_size)]
